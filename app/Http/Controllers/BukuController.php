@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buku;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +22,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        return view('buku.create');
+        return view('buku.create',['kategoris' => Kategori::all()]);
     }
 
     /**
@@ -34,7 +35,7 @@ class BukuController extends Controller
             'penulis' => 'required|string|max:255',
             'penerbit' => 'required|string|max:255',
             'tahun_terbit' => 'required|integer|digits:4',
-            'kategori' => 'required|string|max:255',
+            'kategori_id' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'stok' => 'required|integer',
             'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -62,7 +63,8 @@ class BukuController extends Controller
      */
     public function edit(string $id)
     {
-        return view('buku.edit',['buku' => Buku::findOrFail($id)]);
+        return view('buku.edit',
+        ['buku' => Buku::findOrFail($id), 'kategoris' => Kategori::all()]);
     }
 
     /**
@@ -77,7 +79,7 @@ class BukuController extends Controller
             'penulis' => 'required|string|max:255',
             'penerbit' => 'required|string|max:255',
             'tahun_terbit' => 'required|integer|digits:4',
-            'kategori' => 'required|string|max:255',
+            'kategori_id' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'stok' => 'required|integer',
             'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',

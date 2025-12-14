@@ -1,7 +1,5 @@
 @extends('layout')
 
-
-
 @section('content')
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
         <div>
@@ -9,8 +7,7 @@
             <h6 class="op-7 mb-2">Manajemen Pengelola Buku</h6>
         </div>
         <div class="ms-md-auto py-2 py-md-0">
-            <a href="/buku/list" class="btn btn-label-info btn-round me-2">Lihat List</a>
-            {{-- <a href="#" class="btn btn-primary btn-round">Add Customer</a> --}}
+            <a href="/buku/list" class="btn btn-label-info btn-round me-2">Lihat Katalog</a>
         </div>
     </div>
     <div class="row">
@@ -62,7 +59,7 @@
                                         <td>{{ $item->penulis }}</td>
                                         <td>{{ $item->penerbit }}</td>
                                         <td>{{ $item->tahun_terbit }}</td>
-                                        <td>{{ $item->kategori }}</td>
+                                        <td>{{ $item->kategori->nama_kategori }}</td>
                                         <td>{{ $item->stok }}</td>
                                         <td>
                                             @if ($item->cover_image)
@@ -75,7 +72,7 @@
                                         <td>
                                             <div class="form-button-action d-flex gap-1">
                                                 <a href="{{ route('buku.edit', $item->id) }}"
-                                                    class="btn btn-primary btn-sm" data-bs-toggle="tooltip"
+                                                    class="btn btn-warning btn-sm" data-bs-toggle="tooltip"
                                                     title="Edit Buku">
                                                     <i class="fa fa-edit text-white"></i>
                                                 </a>
@@ -104,13 +101,9 @@
     </div>
 @endsection
 
-
-
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.7/css/responsive.dataTables.min.css">
 @endsection
-
-
 
 @section('js')
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>

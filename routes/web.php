@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('layout');
-});
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
 
 Route::get('/buku/list', [BukuController::class, 'card']);
 Route::resource('buku',BukuController::class);
+Route::resource('kategori',KategoriController::class);

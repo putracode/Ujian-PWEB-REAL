@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('penulis');
             $table->string('penerbit');
             $table->year('tahun_terbit');
-            $table->string('kategori');
+            $table->foreignId('kategori_id')->constrained('kategoris')->onDelete('cascade');
             $table->text('deskripsi');
             $table->integer('stok');
             $table->string('cover_image');

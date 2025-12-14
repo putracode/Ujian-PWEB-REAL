@@ -3,9 +3,9 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+    <title>SIP</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="/kaiadmin/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/kaiadmin/assets/img/logo.png" type="image/x-icon" />
 
     <script src="/kaiadmin/assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
@@ -47,8 +47,8 @@
                 <!-- Logo Header -->
                 <div class="logo-header" data-background-color="dark">
                     <a href="index.html" class="logo">
-                        <img src="/kaiadmin/assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                            height="20" />
+                        <img src="/kaiadmin/assets/img/logo.png" alt="navbar brand" class="navbar-brand"
+                            width="125" />
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
@@ -67,10 +67,16 @@
             <div class="sidebar-wrapper scrollbar scrollbar-inner">
                 <div class="sidebar-content">
                     <ul class="nav nav-secondary">
-                        <li class="nav-item active">
-                            <a href="/buku">
+                        <li class="nav-item {{ Request::is('buku*') ? 'active' : '' }}">
+                            <a href="/buku/list">
                                 <i class="fas fa-book"></i>
                                 <p>Buku</p>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('kategori*') ? 'active' : '' }}">
+                            <a href="/kategori">
+                                <i class="fas fa-list"></i>
+                                <p>Kategori</p>
                             </a>
                         </li>
                     </ul>
@@ -85,8 +91,8 @@
                     <!-- Logo Header -->
                     <div class="logo-header" data-background-color="dark">
                         <a href="index.html" class="logo">
-                            <img src="/kaiadmin/assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                                height="20" />
+                            <img src="/kaiadmin/assets/img/logo.png" alt="navbar brand" class="navbar-brand"
+                                width="125" />
                         </a>
                         <div class="nav-toggle">
                             <button class="btn btn-toggle toggle-sidebar">
@@ -110,12 +116,12 @@
                                 <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
                                     aria-expanded="false">
                                     <div class="avatar-sm">
-                                        <img src="/kaiadmin/assets/img/profile.jpg" alt="..."
+                                        <img src="/kaiadmin/assets/img/avatar.jpeg" alt="..."
                                             class="avatar-img rounded-circle" />
                                     </div>
                                     <span class="profile-username">
                                         <span class="op-7">Hi,</span>
-                                        <span class="fw-bold">Hizrian</span>
+                                        <span class="fw-bold">Putra</span>
                                     </span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -123,11 +129,11 @@
                                         <li>
                                             <div class="user-box">
                                                 <div class="avatar-lg">
-                                                    <img src="/kaiadmin/assets/img/profile.jpg" alt="image profile"
+                                                    <img src="/kaiadmin/assets/img/avatar.jpeg" alt="image profile"
                                                         class="avatar-img rounded" />
                                                 </div>
                                                 <div class="u-text">
-                                                    <h4>Hizrian</h4>
+                                                    <h4>Putra</h4>
                                                     <p class="text-muted">hello@example.com</p>
                                                 </div>
                                             </div>
